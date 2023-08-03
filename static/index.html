@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>WebGPU Compute Examples</title>
+    <script type="text/javascript" src="/vector-dot/main.js"></script>
+</head>
+
+<body>
+
+<form id="shader">
+    <label for="size">Size</label><br>
+    <input type="text" id="size" name="size" value="64"><br>
+
+    <input type="submit" value="Submit">
+</form>
+
+<script>
+    shader.onsubmit = async (e) => {
+        e.preventDefault();
+
+        let size = document.getElementById('size').value;
+        let arr = await main(Number(size));
+        console.log(arr);
+    };
+</script>
+</body>
+</html>
